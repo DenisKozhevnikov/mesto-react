@@ -1,7 +1,7 @@
 # Проектная работа 10. Портирование проекта mesto на React
 
 ### Ссылка на проект 
-* [сайт на gh-pages](https://deniskozhevnikov.github.io/mesto-react/dist/index.html)
+* [сайт на gh-pages](https://deniskozhevnikov.github.io/mesto-react/build/index.html)
 
 ### Ссылка оригинального проекта на gh-pages
 * [сайт на gh-pages](https://deniskozhevnikov.github.io/mesto/dist/index.html)

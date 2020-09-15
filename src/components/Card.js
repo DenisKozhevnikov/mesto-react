@@ -1,7 +1,6 @@
 import React from "react";
 
 function Card({ card, onCardClick }) {
-  console.log(card);
   return (
     <article className="card">
       <img
