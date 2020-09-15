@@ -87,6 +87,3 @@ const api = new Api({
 })
 
 export default api;
-
-
-console.log('some useless code here');
