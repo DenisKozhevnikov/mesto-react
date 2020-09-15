@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
 function PopupWithImage({ card, onClose }) {
   return (
-    <section className={`popup popup_image ${Object.keys(card).length !== 0 && "popup_opened"}`}>
+    <section
+      className={`popup popup_image ${
+        Object.keys(card).length !== 0 && "popup_opened"
+      }`}
+    >
       <div className="popup__container">
         <button type="button" className="popup__close" onClick={onClose} />
         <figure className="popup__figure">
@@ -11,7 +15,7 @@ function PopupWithImage({ card, onClose }) {
         </figure>
       </div>
     </section>
-  )
+  );
 }
 
 export default PopupWithImage;

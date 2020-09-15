@@ -1,5 +1,7 @@
 {
   "name": "mesto-react",
+  "description": "Проект Место с использованием React",
+  "author": "Denis Kozhevnikov",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -4,6 +4,7 @@
   display: block;
   max-width: 142.01px;
   min-height: 33.4px;
+  font-size: 0;
 }
 
 @media screen and (max-width: 570px) {
