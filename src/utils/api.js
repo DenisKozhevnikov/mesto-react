@@ -1,89 +1,84 @@
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
-    this._headers = headers
+    this._headers = headers;
   }
 
   _response() {
     return (res) => {
-      if(res.ok) {
-        return res.json()
+      if (res.ok) {
+        return res.json();
       }
 
-      return Promise.reject(`Ошибка: ${res.status}`)
-    }
+      return Promise.reject(`Ошибка: ${res.status}`);
+    };
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, { headers:this._headers })
-      .then(this._response())
+    return fetch(`${this._baseUrl}/users/me`, { headers: this._headers }).then(
+      this._response()
+    );
   }
 
-  setUserInfo({ name, aboutMe }) {
+  setUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
-      method: 'PATCH',
-      headers:this._headers,
+      method: "PATCH",
+      headers: this._headers,
       body: JSON.stringify({
         name,
-        about: aboutMe
-        })
-      })
-      .then(this._response())
+        about,
+      }),
+    }).then(this._response());
   }
 
-  changeAvatar(link) {
+  setUserAvatar({ avatar }) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
-      method: 'PATCH',
-      headers:this._headers,
+      method: "PATCH",
+      headers: this._headers,
       body: JSON.stringify({
-        avatar: link
-        })
-      })
-      .then(this._response())
+        avatar,
+      }),
+    }).then(this._response());
   }
 
   getItems() {
     return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers
-      })
-      .then(this._response())
+      headers: this._headers,
+    }).then(this._response());
   }
 
   deleteItem(itemId) {
     return fetch(`${this._baseUrl}/cards/${itemId}`, {
-      method: 'DELETE',
-      headers: this._headers
-      })
-      .then(this._response())
+      method: "DELETE",
+      headers: this._headers,
+    }).then(this._response());
   }
 
-  createItem({ name, link }) {
+  setPlace({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
-      method: 'POST',
+      method: "POST",
       headers: this._headers,
       body: JSON.stringify({
-          name,
-          link
-        })
-      })
-      .then(this._response())
+        name,
+        link,
+      }),
+    }).then(this._response());
   }
 
   toggleLike(itemId, isLiked) {
     return fetch(`${this._baseUrl}/cards/likes/${itemId}`, {
-      method: isLiked? 'DELETE' : 'PUT',
-      headers: this._headers
-    })
-    .then(this._response())
+      method: isLiked ? "DELETE" : "PUT",
+      headers: this._headers,
+    }).then(this._response());
   }
 }
 
 const api = new Api({
   baseUrl: `https://mesto.nomoreparties.co/v1/cohort-14`,
   headers: {
-    authorization: '8916ab4b-9a09-4a8e-86cf-42a282e45a8c',
-    'Content-Type': 'application/json'
-  }
-})
+    authorization: "8916ab4b-9a09-4a8e-86cf-42a282e45a8c",
+    "Content-Type": "application/json",
+  },
+});
 
 export default api;
