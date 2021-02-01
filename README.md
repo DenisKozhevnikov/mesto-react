@@ -44,10 +44,10 @@
 ### Ссылка на макет
 * [Макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
 
-### Сайт где могут быть взяты картинки
+### Сайт где могут быть взяты изображения
 * [unsplash.com](https://unsplash.com/)
 
-### Сайт для оптимизации картинок
+### Сайт для оптимизации изображений
 * [tinypng.com](https://tinypng.com/)
 
 #### В проект будут добавлены
